@@ -1,3 +1,4 @@
+from typing import ClassVar
 import unittest
 import typing
 
@@ -9,7 +10,7 @@ class TestListSet(unittest.TestCase):
     Test type-checking for lists and sets
     """
 
-    _TYPES = {set: set, typing.Set: set, list: list, typing.List: list}
+    _TYPES: ClassVar = {set: set, typing.Set: set, list: list, typing.List: list}  # noqa: UP006
 
     def test_each(self):
         for typ, ctor in self._TYPES.items():

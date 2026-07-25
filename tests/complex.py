@@ -1,4 +1,4 @@
-from typing import ContextManager, Any, Callable as CallableTyping
+from typing import ContextManager, Any, Callable as CallableTyping  # noqa: UP035
 from collections.abc import Callable as CallableABC
 import unittest
 

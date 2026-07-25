@@ -9,7 +9,7 @@ class TestUnion(unittest.TestCase):
     Test type checking for unions
     """
 
-    _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])
+    _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])  # noqa: UP007, UP045
 
     def test_any(self):
         self.assertTrue(type_check(None, typing.Any))

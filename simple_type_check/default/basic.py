@@ -3,7 +3,6 @@ from sys import version_info
 from pathlib import Path
 import numbers
 
-
 __all__ = ("BASIC",)
 
 
@@ -108,4 +107,4 @@ BASIC: set[type] = _BUILTIN_PRIMITIVES | _PRIMITIVES | _NUMBERS | _EXCEPTIONS
 
 if version_info >= (3, 11):
     # pylint: disable=undefined-variable
-    BASIC |= {BaseExceptionGroup, ExceptionGroup}  # type: ignore
+    BASIC |= {BaseExceptionGroup, ExceptionGroup}  # type: ignore  # noqa: F821

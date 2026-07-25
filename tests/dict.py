@@ -9,7 +9,7 @@ class TestDict(unittest.TestCase):
     Test type checking dicts
     """
 
-    _DICTS = (dict, typing.Dict)
+    _DICTS = (dict, typing.Dict)  # noqa: UP006
 
     def test_each(self):
         for dct in self._DICTS:
@@ -43,7 +43,7 @@ class TestDict(unittest.TestCase):
                 type_check({"1": 1}, illegal2)
 
     def test_extras(self):
-        for dct in (dict, typing.Dict):
+        for dct in (dict, typing.Dict):  # noqa: UP006
             self.assertTrue(type_check({"1": {}}, dct))
             self.assertTrue(type_check({"1": {}}, dct[str, dct]))
             self.assertTrue(type_check({"1": {}}, dct[str, dct[str, int]]))

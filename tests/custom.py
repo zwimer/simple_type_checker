@@ -31,7 +31,7 @@ class TestCustom(unittest.TestCase):
     Test type checking for custom types
     """
 
-    _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])
+    _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])  # noqa: UP045, UP007
 
     def test_basic(self):
         b = Basic1()

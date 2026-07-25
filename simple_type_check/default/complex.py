@@ -8,7 +8,6 @@ import types
 
 from ..top_level_check import TopLevelCheck
 
-
 if typing.TYPE_CHECKING:
     from typing import Any
 

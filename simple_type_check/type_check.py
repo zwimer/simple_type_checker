@@ -11,7 +11,7 @@ if TYPE_CHECKING:
     from .top_level_check import TopLevelCheck
 
 
-__all__ = ("TypeChecker", "TypeCheckFailed")
+__all__ = ("TypeCheckFailed", "TypeChecker")
 
 
 class TypeCheckFailed(TypeError, RuntimeError):

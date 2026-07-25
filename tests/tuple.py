@@ -9,11 +9,11 @@ class TestTuple(unittest.TestCase):
     Test type-checking for tuples
     """
 
-    _TYPES = (tuple, typing.Tuple)
+    _TYPES = (tuple, typing.Tuple)  # noqa: UP006
 
     def test_0_arg(self):
         for tup in self._TYPES:
-            self.assertTrue(type_check(tuple(), tup))
+            self.assertTrue(type_check((), tup))
             self.assertTrue(type_check((1,), tup))
             self.assertFalse(type_check([1], tup))
             self.assertFalse(type_check(1, tup))

@@ -2,7 +2,6 @@ import unittest
 
 from simple_type_check import type_check, TypeCheckFailed
 
-
 #
 # Testable functions
 #
