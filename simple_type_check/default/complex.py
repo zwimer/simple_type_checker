@@ -19,9 +19,7 @@ class _BuiltinBasic(TopLevelCheck):
     _TYPE: type | None = None
 
     def __call__(self, obj: Any, type_: Any) -> bool:
-        """
-        Raises ValueError if type_ is invalid
-        """
+        """Raises ValueError if type_ is invalid"""
         if self._TYPE is None:
             raise NotImplementedError()
         # pylint: disable=isinstance-second-argument-not-valid-type

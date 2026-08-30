@@ -6,9 +6,7 @@ from simple_type_check import type_check
 
 
 class TestBasic(unittest.TestCase):
-    """
-    Test type-checking for basic
-    """
+    """Test type-checking for basic"""
 
     def test_basic(self):
         self.assertTrue(type_check(1, int))

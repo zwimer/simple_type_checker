@@ -5,9 +5,7 @@ from simple_type_check import type_check
 
 
 class TestUnion(unittest.TestCase):
-    """
-    Test type checking for unions
-    """
+    """Test type checking for unions"""
 
     _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])  # noqa: UP007, UP045
 

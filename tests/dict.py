@@ -5,9 +5,7 @@ from simple_type_check import type_check
 
 
 class TestDict(unittest.TestCase):
-    """
-    Test type checking dicts
-    """
+    """Test type checking dicts"""
 
     _DICTS = (dict, typing.Dict)  # noqa: UP006
 

@@ -6,9 +6,7 @@ from simple_type_check import type_check
 
 
 class TestListSet(unittest.TestCase):
-    """
-    Test type-checking for lists and sets
-    """
+    """Test type-checking for lists and sets"""
 
     _TYPES: ClassVar = {set: set, typing.Set: set, list: list, typing.List: list}  # noqa: UP006
 

@@ -15,18 +15,17 @@ __all__ = ("TypeCheckFailed", "TypeChecker")
 
 
 class TypeCheckFailed(TypeError, RuntimeError):
-    """
-    Raised when a decorator's type check fails
-    """
+    """Raised when a decorator's type check fails"""
 
 
 class TypeChecker:
     def __init__(self, *basic: type, advanced: Sequence[type[TopLevelCheck]] | None = None, bool_is_int: bool = False):
-        """
-        Construct a type-checker
-        :param basic: Additional basic types to handle, where isinstance is sufficient for type checking
-        :param advanced: Additional basic types to handle that are not in basic
-        :param bool_is_int: If False, will treat bool and int as unrelated types; else booleans are integers
+        """Construct a type-checker
+
+        Args:
+            *basic: Additional basic types to handle, where isinstance is sufficient for type checking
+            advanced: Additional basic types to handle that are not in basic
+            bool_is_int: If False, will treat bool and int as unrelated types; else booleans are integers
         """
         adv: tuple[type[TopLevelCheck], ...] = COMPLEX + (tuple(advanced) if advanced else ())
         self._advanced: tuple[TopLevelCheck, ...] = tuple(K(self) for K in adv)
@@ -35,9 +34,12 @@ class TypeChecker:
 
     def __call__(self, obj: Any, type_: Any) -> bool:
         """
-        :param obj: Object to check the type of
-        :param type_: Type to check
-        :return: True if obj is of type type_, False otherwise
+        Args:
+            obj: Object to check the type of
+            type_: Type to check
+
+        Returns:
+            True if obj is of type type_, False otherwise
         """
         if obj is None and type_ is None:  # Special case for 'None' since 'None' isn't a type
             return True
@@ -47,23 +49,22 @@ class TypeChecker:
 
     def require(self, obj: Any, type_: Any) -> None:
         """
-        :param obj: Object to check the type of
-        :param type_: Type to check
-        :raises TypeCheckFailed: If obj is not of type_
+        Args:
+            obj: Object to check the type of
+            type_: Type to check
+
+        Raises:
+            TypeCheckFailed: If obj is not of type_
         """
         if not self(obj, type_):
             raise TypeCheckFailed(obj, type_)
 
     def args(self, func: Callable) -> Callable:
-        """
-        A decorator that type checks argument types
-        """
+        """A decorator that type checks argument types"""
         return self.decorate(check_args=True, check_return=False)(func)
 
     def returns(self, func: Callable) -> Callable:
-        """
-        A decorator that type checks a return type
-        """
+        """A decorator that type checks a return type"""
         return self.decorate(check_args=False, check_return=True)(func)
 
     def _check_args(self, ci: CallableInfo, f_args: tuple[Any], f_kwargs: dict[str, Any]):

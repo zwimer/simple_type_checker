@@ -27,9 +27,7 @@ type_check = TypeChecker(Basic1, advanced=(Complex1Check,))
 
 
 class TestCustom(unittest.TestCase):
-    """
-    Test type checking for custom types
-    """
+    """Test type checking for custom types"""
 
     _TYPES = (int | None, typing.Union[int, None], typing.Optional[int])  # noqa: UP045, UP007
 

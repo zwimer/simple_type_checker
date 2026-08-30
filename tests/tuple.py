@@ -5,9 +5,7 @@ from simple_type_check import type_check
 
 
 class TestTuple(unittest.TestCase):
-    """
-    Test type-checking for tuples
-    """
+    """Test type-checking for tuples"""
 
     _TYPES = (tuple, typing.Tuple)  # noqa: UP006
 

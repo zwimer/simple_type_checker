@@ -22,9 +22,7 @@ class CM:
 
 
 class TestComplex(unittest.TestCase):
-    """
-    Test type checking for unions
-    """
+    """Test type checking for unions"""
 
     def test_type(self):
         self.assertTrue(type_check(int, type))

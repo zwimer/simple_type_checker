@@ -33,9 +33,7 @@ def small(a: int, b: int) -> None:
 
 
 class TestTypeCheck(unittest.TestCase):
-    """
-    Test type checking for unions
-    """
+    """Test type_check"""
 
     def test_args(self):
         _ = id_a(1)
